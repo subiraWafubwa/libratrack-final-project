@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Lato", sans-serif;
+}
+
+.whole-app {
+  background: url("../assets/background.jpg");
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.app {
+  width: 90%;
+  height: 600px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 249, 240);
+  height: 70px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.header #logo {
+  float: left;
+  margin: 0px 10px;
+  width: 40px;
+}
+
+.header h1 {
+  float: left;
+  font-family: "Pacifico", sans-serif;
+  font-size: 30px;
+}
+
+.header #search {
+  left: 300px;
+  position: absolute;
+  width: 25px;
+}
+
+.header input {
+  border: 0.5px solid gray;
+  width: 350px;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 0px 0px 0px 35px;
+}
+
+.header #connect-kindle,
+#start-live,
+#join-live {
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 15px;
+  height: 40px;
+}
+
+.header #connect-kindle {
+  color: white;
+  margin: 0px 60px;
+  background-color: orangered;
+}
+
+.header #start-live {
+  color: white;
+  margin: 0px 15px 0px 50px;
+  background-color: rgb(0, 10, 98);
+}
+
+.header #join-live {
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
+
+.main-body {
+  display: flex;
+  height: 520px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.status-body {
+  background-color: rgb(255, 249, 240);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex: 2;
+}
+
+.status-body h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.status-body-list {
+  border: 1px solid black;
+  height: 480px;
+}
+
+.card-body {
+  margin-left: 10px;
+  padding: 10px;
+  background-color: rgb(255, 249, 240);
+  display: flex;
+  flex-direction: column;
+  flex: 7;
+}
+
+.card-body-top-bar {
+  width: 100%;
+  height: 35px;
+}
+
+.card-body-top-bar h2 {
+  font-size: 20px;
+  float: left;
+}
+
+.card-body-top-bar select {
+  height: 25px;
+  float: right;
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  background-color: darkgray;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 6px;
+}
+
+.card-body-main {
+  height: 480px;
+  border: 1px solid black;
+}
+
+#add-book {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  right: 100px;
+  bottom: 70px;
+  width: 90px;
+  height: 90px;
+  background-color: rgb(255, 176, 58);
+}
+
+#add-book img {
+  width: 80px;
+  height: 80px;
+}
