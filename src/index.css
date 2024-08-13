@@ -107,6 +107,7 @@
 .status-body-list {
   border: 1px solid black;
   height: 480px;
+  overflow-y: auto;
 }
 
 .card-body {
