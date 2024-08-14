@@ -16,7 +16,7 @@
 }
 
 .app {
-  width: 90%;
+  width: 1230px;
   height: 600px;
 }
 
@@ -146,14 +146,13 @@
 }
 
 #add-book {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   border: none;
-  right: 100px;
-  bottom: 70px;
+  transform: translate(810px, 360px);
   width: 90px;
   height: 90px;
   background-color: rgb(255, 176, 58);
@@ -162,4 +161,115 @@
 #add-book img {
   width: 80px;
   height: 80px;
+}
+
+#temp-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  right: 100px;
+  bottom: 170px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(2, 1, 0);
+}
+
+#temp-button img {
+  width: 40px;
+  height: 40px;
+}
+
+.add-book-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 90%;
+  height: 600px;
+}
+
+.add-book-div {
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  height: 500px;
+  position: absolute;
+  padding: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+}
+
+.add-book-div p {
+  float: left;
+  font-size: 25px;
+  padding: 5px;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.add-book-div input,
+select {
+  font-size: 20px;
+  float: left;
+  border: none;
+  background-color: lightgray;
+  padding: 5px 10px;
+  float: left;
+  border-radius: 5px;
+  height: 30px;
+}
+
+#isbn,
+#title,
+#genre,
+#author,
+#status-page {
+  width: 100%;
+  display: inline-block;
+  margin: 10px 0px;
+  align-items: center;
+}
+
+#isbn input {
+  width: 450px;
+}
+
+#isbn button {
+  float: right;
+  background-color: rgb(0, 4, 109);
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+#isbn img {
+  width: 25px;
+  height: 25px;
+}
+
+#title input {
+  width: 500px;
+}
+
+#genre input {
+  width: 480px;
+}
+
+#author input {
+  width: 470px;
+}
+
+#status-page input {
+  width: 115px;
+}
+
+#status-page select {
+  height: 45px;
+  margin-right: 10px;
 }

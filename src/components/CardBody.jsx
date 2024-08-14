@@ -1,4 +1,5 @@
 import add from "../../assets/add.png";
+import question from "../../assets/question.png";
 
 export default function CardBody() {
   return (
@@ -17,6 +18,9 @@ export default function CardBody() {
         {/* Where to add cards */}
         <button id="add-book">
           <img src={add} alt="plus image" />
+        </button>
+        <button id="temp-button">
+          <img src={question} alt="plus image" />
         </button>
       </div>
     </div>
