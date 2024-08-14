@@ -11,7 +11,7 @@ export default function StatusBody() {
     fetch("http://localhost:8001/books")
       .then((res) => {
         if (!res.ok) {
-          // Handle the error by logging it or showing an alert
+          
           console.error("Network response was not ok");
           alert("Failed to fetch books. Please try again later.");
           return [];
