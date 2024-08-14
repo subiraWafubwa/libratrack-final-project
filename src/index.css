@@ -32,6 +32,7 @@
 }
 
 .app {
+  opacity: 0.97;
   width: 1600px;
   height: 700px;
 }
@@ -126,6 +127,7 @@
 
 .book-section {
   border-bottom: 1px solid #dddddd;
+  margin-right: 10px;
   padding-bottom: 10px;
 }
 
@@ -159,7 +161,7 @@
 .toggle-button {
   background-color: transparent;
   border: none;
-  padding: 10px 10px 0px 0px;
+  padding-top: 10px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
@@ -233,7 +235,7 @@
   height: 150px;
   background-color: rgb(255, 249, 240);
   border-radius: 8px;
-  box-shadow: inset 5px 5px 5px 2px rgb(255, 255, 255),
+  box-shadow: inset 5px 5px 5px 2px rgb(255, 246, 233),
     5px 5px 10px 2px rgb(255, 234, 202);
   padding: 20px;
 }
