@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../index.css";
-import BookSection from "./BookSection";
+import BookSection from "./StatusBookItem";
 
 // Importing asset icons
 import downYellow from "../../assets/down_yellow.png";
