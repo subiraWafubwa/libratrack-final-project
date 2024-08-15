@@ -16,6 +16,22 @@
   border-radius: 2px;
 }
 
+/* Scrollbar styling for WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(255, 249, 240);
+  border-left: 1px solid rgba(36, 21, 0, 0.645);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 0, 32);
+  width: 5px;
+  border-radius: 2px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
