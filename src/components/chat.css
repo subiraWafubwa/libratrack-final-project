@@ -1,0 +1,156 @@
+body {
+  background-image: url('./assets/valley.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(75deg, rgb(20, 23, 33) 0%, rgb(20, 23, 33) 50%, rgba(20, 23, 33,0.8) 100%);
+  /* Vertical center */
+  display: table-cell;
+  vertical-align: middle;
+  
+}
+
+.form-card {
+  width: 100%;
+  height: 100vh;
+  max-width: 350px;
+  padding: 0% 25% 0% 25%;
+ 
+}
+
+.form-title { 
+  font-size: 42px; 
+  font-family: 'Avenir'; 
+  font-weight: 800; 
+  letter-spacing: 0.5px; 
+  color: #e8e8e8; 
+  padding-bottom: 12px; 
+}
+
+.form-subtitle {
+  font-size: 18px;
+  font-family: 'Avenir';
+  letter-spacing: 0.5px;
+  color: #afafaf;
+  padding-bottom: 24px;
+}
+
+.auth {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 12px;
+}
+.auth-label {
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  font-size: 11px;
+  color: rgb(175, 175, 175);
+  font-family: Avenir;
+  width: 100px;
+}
+.auth-input {
+  background-color: #3e404b;
+  color: white;
+  font-family: "Avenir";
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 24px 18px 12px 18px;
+  width: calc(100% - 18px - 18px);
+  margin-bottom: 12px;
+}
+.auth-button {
+  width: 100%;
+  height: 53px;
+  color: white;
+  background-color: #fa541c;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: "Avenir";
+  cursor: pointer;
+  transition: all .44s ease;
+  -webkit-transition: all .44s ease;
+  -moz-transition: all .44s ease;
+}
+.auth-button:hover { filter: brightness(145%); }
+
+.chat-wrapper {
+  height: 80vh; 
+  width: 80%;
+  margin-left: 10%; 
+  color: white; 
+  background: rgb(43, 47, 60);
+}
+.chat-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw; /* 75% of the viewport width */
+  height: 75vh; /* 75% of the viewport height */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+/* Ensure chat box content is properly aligned */
+.chat-box .header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Space between header and chat area */
+}
+
+.chat-box .header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.chat-box .content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.chat-box .footer {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center buttons in footer */
+  margin-top: 10px;
+}
+
+.chat-box .footer button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fa541c; /* Example color */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-box .footer button:hover {
+  background-color: #e64a19; /* Darker shade on hover */
+}
