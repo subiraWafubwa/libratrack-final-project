@@ -1,7 +1,7 @@
 import search from "../../../assets/white_search.png";
 import React, { useState } from "react";
 
-export default function ISBN() {
+export default function ISBN({ setAddNewBook }) {
   const [isbn, setIsbn] = useState("");
   const [bookData, setBookData] = useState(null);
   const [error, setError] = useState(null);
@@ -32,7 +32,14 @@ export default function ISBN() {
       <input
         placeholder="Add book details using ISBN CODE"
         value={isbn}
-        onChange={(e) => setIsbn(e.target.value)}
+        onChange={(e) => {
+          const newIsbn = e.target.value;
+          setIsbn(newIsbn);
+          setAddNewBook((prev) => ({
+            ...prev,
+            isbn: newIsbn,
+          }));
+        }}
       />
       <button onClick={handleFetchBook}>
         <img src={search} />

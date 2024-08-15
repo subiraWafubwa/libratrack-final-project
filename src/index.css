@@ -283,7 +283,7 @@
   align-items: center;
   position: absolute;
   z-index: 5;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   width: 1600px;
   height: 700px;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function StatusPage() {
+function StatusPage({ setAddNewBook }) {
+  const [totalPages, setTotalPages] = useState(0);
   const [selectedValue, setSelectedValue] = useState("to_be_read");
 
   const handleSelectChange = (e) => {
@@ -19,7 +20,13 @@ function StatusPage() {
       <p>Status: </p>
       <select
         value={selectedValue}
-        onChange={handleSelectChange}
+        onChange={() => {
+          handleSelectChange;
+          setAddNewBook((prev) => ({
+            ...prev,
+            status: selectedValue,
+          }));
+        }}
         style={{ backgroundColor, color: "white" }}
       >
         <option
@@ -42,7 +49,18 @@ function StatusPage() {
         </option>
       </select>
       <p>Total Pages: </p>
-      <input placeholder="Add total Pages" />
+      <input
+        placeholder="Add total Pages"
+        type="number"
+        value={totalPages}
+        onChange={(e) => {
+          setTotalPages(e.target.value);
+          setAddNewBook((prev) => ({
+            ...prev,
+            total_pages: e.target.value,
+          }));
+        }}
+      />
     </div>
   );
 }

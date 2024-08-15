@@ -12,16 +12,16 @@ import upGreen from "../../assets/up_green.png";
 
 export default function StatusBody() {
   const [books, setBooks] = useState([]);
-
   const [showCurrentlyReading, setShowCurrentlyReading] = useState(false);
   const [showWantToRead, setShowWantToRead] = useState(false);
   const [showRead, setShowRead] = useState(false);
 
+  // Fetching books for status
   useEffect(() => {
     fetch("http://localhost:8001/books")
       .then((res) => {
         if (!res.ok) {
-          console.error("Network response was not ok");
+          console.error("Failed to fetch data!");
           alert("Failed to fetch books. Please try again later.");
           return [];
         }
