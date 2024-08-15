@@ -20,7 +20,7 @@ export default function StatusBody() {
       })
       .then((data) => setBooks(data))
       .catch((error) => {
-        // Handle the error without setting state
+        
         console.error("Fetch error:", error);
         alert("An error occurred while fetching books. Please try again later.");
       });
