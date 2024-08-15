@@ -73,7 +73,6 @@ return (
         </div>
     </div>
 );
-
 };
 
 export default SearchBooks;
