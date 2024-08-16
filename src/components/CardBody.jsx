@@ -1,21 +1,53 @@
+import React, { useState, useEffect } from "react";
 import add from "../../assets/add.png";
 
-export default function CardBody() {
+export default function CardBody({
+  filteredBooks,
+  books,
+  sortOption,
+  handleSortChange,
+  setAddBook,
+  addBook,
+}) {
   return (
     <div className="card-body">
       <div className="card-body-top-bar">
-        <h2>You have "this" books in your collection</h2>
-        <select defaultValue="title">
+        <h2>You have {books.length} books in your collection</h2>
+        <select value={sortOption} onChange={handleSortChange}>
           <option value="title">Sort by title</option>
-          <option value="last_updated">Sort by last updated</option>
           <option value="genre">Sort by genre</option>
           <option value="author">Sort by author</option>
           <option value="status">Sort by status</option>
         </select>
       </div>
       <div className="card-body-main">
-        {/* Where to add cards */}
-        <button id="add-book">
+        {filteredBooks.map((book) => (
+          <div key={book.id} className="card">
+            <img src={book.cover_photo_url} alt="pic" />
+            <div id="card-details">
+              <h3>{book.title}</h3>
+              <p>
+                <b>Author:</b> {book.author}
+              </p>
+              <p>
+                <b>Genre:</b> {book.genre}
+              </p>
+              <p>
+                <b>Status: </b>{" "}
+                {book.status === "already_read"
+                  ? "Already Read"
+                  : book.status === "to_be_read"
+                  ? "To be Read"
+                  : "Currently Reading"}
+              </p>
+              <p>
+                <b>Bookmarked Page: </b>
+                {book.bookmark}/{book.total_pages}
+              </p>
+            </div>
+          </div>
+        ))}
+        <button id="add-book" onClick={() => setAddBook(true)}>
           <img src={add} alt="plus image" />
         </button>
       </div>
