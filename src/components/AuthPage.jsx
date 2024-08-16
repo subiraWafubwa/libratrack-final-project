@@ -1,34 +1,45 @@
-import axios from "axios"
+import axios from "axios";
+import close from "../../assets/close.png";
 
 const AuthPage = (props) => {
-    const onSubmit = (e) => {
-      e.preventDefault();
-      const { value } = e.target[0];
-      axios.post(
-        "http://localhost:3001/authenticate",
-        {username:value}
-    )
-    .then(r=>props.onAuth({...r.data, secret:value  }))
-    .catch(e=>console.log("error",e))
-    };
-  
-    return (
-      <div className="background">
-        <form onSubmit={onSubmit} className="form-card">
-          <div className="form-title">Welcome 👋</div>
-  
-          <div className="form-subtitle">Set a username to get started</div>
-  
-          <div className="auth">
-            <div className="auth-label">Username</div>
-            <input className="auth-input" name="username" />
-            <button className="auth-button" type="submit">
-              Enter
-            </button>
-          </div>
-        </form>
-      </div>
-    );
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const { value } = e.target[0];
+    axios
+      .post("http://localhost:3001/authenticate", { username: value })
+      .then((r) => props.onAuth({ ...r.data, secret: value }))
+      .catch((e) => console.log("error", e));
   };
-  
-  export default AuthPage;
+
+  return (
+    <div className="background">
+      <button id="remove-chat">
+        <img
+          src={close}
+          alt="plus image"
+          onClick={() => {
+            props.toggleChatVisibility();
+          }}
+        />
+      </button>
+      <form onSubmit={onSubmit} className="form-card">
+        <div className="form-title">LibraTrack Chat</div>
+
+        <div className="form-subtitle">Set a username to get started</div>
+
+        <div className="auth">
+          <input
+            className="auth-input"
+            name="username"
+            placeholder="Add username"
+          />
+          <button className="auth-button" type="submit">
+            Enter
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default AuthPage;

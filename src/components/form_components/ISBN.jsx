@@ -1,28 +1,32 @@
 import search from "../../../assets/white_search.png";
 import React, { useState } from "react";
 
-export default function ISBN({ setAddNewBook }) {
-  const [isbn, setIsbn] = useState("");
-  const [bookData, setBookData] = useState(null);
+export default function ISBN({ isbn, setAddNewBook }) {
+  const [localIsbn, setLocalIsbn] = useState(isbn);
   const [error, setError] = useState(null);
 
   const handleFetchBook = () => {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`;
+    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${localIsbn}`;
 
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         if (data.totalItems > 0) {
-          setBookData(data.items[0].volumeInfo);
-          setError(null);
+          const bookInfo = data.items[0].volumeInfo;
+          setAddNewBook({
+            title: bookInfo.title || "",
+            author: bookInfo.authors ? bookInfo.authors[0] : "",
+            total_pages: bookInfo.pageCount || 0,
+            cover_photo_url: bookInfo.imageLinks
+              ? bookInfo.imageLinks.thumbnail
+              : "",
+          });
         } else {
           setError("No book found with this ISBN.");
-          setBookData(null);
         }
       })
       .catch(() => {
         setError("An error occurred while fetching the book data.");
-        setBookData(null);
       });
   };
 
@@ -31,26 +35,30 @@ export default function ISBN({ setAddNewBook }) {
       <p>ISBN:</p>
       <input
         placeholder="Add book details using ISBN CODE"
-        value={isbn}
+        value={localIsbn}
         onChange={(e) => {
-          const newIsbn = e.target.value;
-          setIsbn(newIsbn);
+          setLocalIsbn(e.target.value);
           setAddNewBook((prev) => ({
             ...prev,
-            isbn: newIsbn,
+            isbn: e.target.value,
           }));
         }}
       />
       <button onClick={handleFetchBook}>
-        <img src={search} />
+        <img src={search} alt="Search" />
       </button>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {bookData &&
-        console.log({
-          title: bookData.title,
-          author: bookData.authors[0],
-          total_pages: bookData.pageCount,
-        })}
+      {error && (
+        <p
+          style={{
+            color: "red",
+            fontSize: "17px",
+            position: "absolute",
+            transform: "translate(0px, 36px)",
+          }}
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 }

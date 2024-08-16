@@ -17,20 +17,24 @@ export default function Header({ handleSearchChange, search }) {
       <img id="search" src={searchIcon} alt="search" />
       <input
         placeholder="Search by title, genre, author, status or ISBN..."
+        id="searchInput"
         value={search}
         onChange={handleSearchChange}
       />
-      <button id="connect-kindle">Connect to Kindle</button>
-      <button onClick={toggleChatVisibility}>
-        {isChatVisible ? "Close Chat" : "Open Chat"}
+      <button id="open-chat" onClick={toggleChatVisibility}>
+        Open Chat
       </button>
+
       {isChatVisible && (
-        <div className="chat-box">
-          <Mapp />
+        <div
+          className="add-book-background"
+          style={{ transform: "translate(0px, 315px)" }}
+        >
+          <div className="chat-box">
+            <Mapp toggleChatVisibility={toggleChatVisibility} />
+          </div>
         </div>
       )}
-      <button id="start-live">Start live session</button>
-      <button id="join-live">Join session</button>
     </div>
   );
 }

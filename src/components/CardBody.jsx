@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import add from "../../assets/add.png";
+import defaultCoverImage from "../../assets/default_cover_image.jpg";
 
 export default function CardBody({
   filteredBooks,
@@ -7,7 +8,7 @@ export default function CardBody({
   sortOption,
   handleSortChange,
   setAddBook,
-  addBook,
+  setUpdateBook,
 }) {
   return (
     <div className="card-body">
@@ -22,8 +23,19 @@ export default function CardBody({
       </div>
       <div className="card-body-main">
         {filteredBooks.map((book) => (
-          <div key={book.id} className="card">
-            <img src={book.cover_photo_url} alt="pic" />
+          <div
+            key={book.id}
+            className="card"
+            onClick={() => {
+              setUpdateBook(book.id);
+            }}
+          >
+            <img
+              src={
+                book.cover_photo_url ? book.cover_photo_url : defaultCoverImage
+              }
+              alt="pic"
+            />
             <div id="card-details">
               <h3>{book.title}</h3>
               <p>
@@ -47,7 +59,12 @@ export default function CardBody({
             </div>
           </div>
         ))}
-        <button id="add-book" onClick={() => setAddBook(true)}>
+        <button
+          id="add-book"
+          onClick={() => {
+            setAddBook(true);
+          }}
+        >
           <img src={add} alt="plus image" />
         </button>
       </div>

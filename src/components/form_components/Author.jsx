@@ -1,19 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Author({ setAddNewBook }) {
-  const [author, setAuthor] = useState("");
+export default function Author({ author, setAddNewBook }) {
+  const [localAuthor, setLocalAuthor] = useState(author);
+
+  useEffect(() => {
+    setLocalAuthor(author);
+  }, [author]);
 
   return (
     <div id="author">
       <p>Author:</p>
       <input
         placeholder="Add author"
-        value={author}
+        value={localAuthor}
         onChange={(e) => {
-          setAuthor(e.target.value);
+          const newAuthor = e.target.value;
+          setLocalAuthor(newAuthor);
           setAddNewBook((prev) => ({
             ...prev,
-            author: e.target.value,
+            author: newAuthor,
           }));
         }}
       />

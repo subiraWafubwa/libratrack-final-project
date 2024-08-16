@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": 1,
+      "id": "1",
       "title": "To Kill a Mockingbird",
       "genre": "Fiction",
       "author": "Harper Lee",
@@ -12,7 +12,7 @@
       "bookmark": 336
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "1984",
       "genre": "Dystopian",
       "author": "George Orwell",
@@ -23,7 +23,7 @@
       "bookmark": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "The Great Gatsby",
       "genre": "Fiction",
       "author": "F. Scott Fitzgerald",
@@ -34,7 +34,7 @@
       "bookmark": 75
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Pride and Prejudice",
       "genre": "Romance",
       "author": "Jane Austen",
@@ -45,7 +45,7 @@
       "bookmark": 279
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "The Catcher in the Rye",
       "genre": "Fiction",
       "author": "J.D. Salinger",
@@ -56,7 +56,7 @@
       "bookmark": 120
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "The Hobbit",
       "genre": "Fantasy",
       "author": "J.R.R. Tolkien",
@@ -67,7 +67,7 @@
       "bookmark": 0
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Moby-Dick",
       "genre": "Adventure",
       "author": "Herman Melville",
@@ -78,7 +78,7 @@
       "bookmark": 720
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "War and Peace",
       "genre": "Historical Fiction",
       "author": "Leo Tolstoy",
@@ -89,7 +89,7 @@
       "bookmark": 0
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Crime and Punishment",
       "genre": "Psychological Fiction",
       "author": "Fyodor Dostoevsky",
@@ -100,7 +100,7 @@
       "bookmark": 215
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "The Brothers Karamazov",
       "genre": "Philosophical Fiction",
       "author": "Fyodor Dostoevsky",
@@ -111,7 +111,7 @@
       "bookmark": 796
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Brave New World",
       "genre": "Dystopian",
       "author": "Aldous Huxley",
@@ -122,7 +122,7 @@
       "bookmark": 130
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Jane Eyre",
       "genre": "Romance",
       "author": "Charlotte Brontë",
@@ -133,7 +133,7 @@
       "bookmark": 507
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "The Odyssey",
       "genre": "Epic",
       "author": "Homer",
@@ -144,7 +144,7 @@
       "bookmark": 0
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Ulysses",
       "genre": "Modernist Fiction",
       "author": "James Joyce",
@@ -155,7 +155,7 @@
       "bookmark": 450
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "The Divine Comedy",
       "genre": "Epic Poetry",
       "author": "Dante Alighieri",
@@ -166,7 +166,7 @@
       "bookmark": 0
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Don Quixote",
       "genre": "Adventure",
       "author": "Miguel de Cervantes",
@@ -177,7 +177,7 @@
       "bookmark": 992
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Wuthering Heights",
       "genre": "Gothic Fiction",
       "author": "Emily Brontë",
@@ -188,7 +188,7 @@
       "bookmark": 200
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "Frankenstein",
       "genre": "Science Fiction",
       "author": "Mary Shelley",
@@ -199,7 +199,7 @@
       "bookmark": 280
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Anna Karenina",
       "genre": "Realist Fiction",
       "author": "Leo Tolstoy",
@@ -210,7 +210,7 @@
       "bookmark": 0
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Madame Bovary",
       "genre": "Realist Fiction",
       "author": "Gustave Flaubert",
@@ -221,7 +221,7 @@
       "bookmark": 150
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "The Lord of the Rings: The Fellowship of the Ring",
       "genre": "Fantasy",
       "author": "J.R.R. Tolkien",
@@ -232,7 +232,7 @@
       "bookmark": 0
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "The Lord of the Rings: The Two Towers",
       "genre": "Fantasy",
       "author": "J.R.R. Tolkien",
@@ -243,7 +243,7 @@
       "bookmark": 0
     },
     {
-      "id": 23,
+      "id": "23",
       "title": "The Lord of the Rings: The Return of the King",
       "genre": "Fantasy",
       "author": "J.R.R. Tolkien",
@@ -254,7 +254,7 @@
       "bookmark": 0
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "The Road",
       "genre": "Post-Apocalyptic Fiction",
       "author": "Cormac McCarthy",
@@ -265,7 +265,7 @@
       "bookmark": 100
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "The Shining",
       "genre": "Horror",
       "author": "Stephen King",
@@ -276,7 +276,7 @@
       "bookmark": 659
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "A Game of Thrones",
       "genre": "Fantasy",
       "author": "George R.R. Martin",
@@ -287,7 +287,7 @@
       "bookmark": 400
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "The Handmaid's Tale",
       "genre": "Dystopian",
       "author": "Margaret Atwood",
@@ -298,7 +298,7 @@
       "bookmark": 311
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "The Hunger Games",
       "genre": "Dystopian",
       "author": "Suzanne Collins",
@@ -309,7 +309,7 @@
       "bookmark": 0
     },
     {
-      "id": 29,
+      "id": "29",
       "title": "The Girl with the Dragon Tattoo",
       "genre": "Crime Thriller",
       "author": "Stieg Larsson",
@@ -320,7 +320,7 @@
       "bookmark": 300
     },
     {
-      "id": 30,
+      "id": "30",
       "title": "Life of Pi",
       "genre": "Adventure",
       "author": "Yann Martel",
@@ -331,7 +331,7 @@
       "bookmark": 326
     },
     {
-      "id": 31,
+      "id": "31",
       "title": "Slaughterhouse-Five",
       "genre": "Science Fiction",
       "author": "Kurt Vonnegut",
@@ -342,7 +342,7 @@
       "bookmark": 0
     },
     {
-      "id": 32,
+      "id": "32",
       "title": "The Hitchhiker's Guide to the Galaxy",
       "genre": "Science Fiction",
       "author": "Douglas Adams",
@@ -353,7 +353,7 @@
       "bookmark": 100
     },
     {
-      "id": 33,
+      "id": "33",
       "title": "The Book Thief",
       "genre": "Historical Fiction",
       "author": "Markus Zusak",
@@ -364,7 +364,7 @@
       "bookmark": 552
     },
     {
-      "id": 34,
+      "id": "34",
       "title": "The Alchemist",
       "genre": "Philosophical Fiction",
       "author": "Paulo Coelho",
@@ -375,7 +375,7 @@
       "bookmark": 197
     },
     {
-      "id": 35,
+      "id": "35",
       "title": "The Catch-22",
       "genre": "Satire",
       "author": "Joseph Heller",
@@ -386,7 +386,7 @@
       "bookmark": 0
     },
     {
-      "id": 36,
+      "id": "36",
       "title": "Beloved",
       "genre": "Historical Fiction",
       "author": "Toni Morrison",
@@ -397,7 +397,7 @@
       "bookmark": 160
     },
     {
-      "id": 37,
+      "id": "37",
       "title": "Fahrenheit 451",
       "genre": "Dystopian",
       "author": "Ray Bradbury",
@@ -408,7 +408,7 @@
       "bookmark": 249
     },
     {
-      "id": 38,
+      "id": "38",
       "title": "Maus",
       "genre": "Graphic Novel",
       "author": "Art Spiegelman",
@@ -419,7 +419,7 @@
       "bookmark": 296
     },
     {
-      "id": 39,
+      "id": "39",
       "title": "Dracula",
       "genre": "Gothic Fiction",
       "author": "Bram Stoker",
@@ -430,7 +430,7 @@
       "bookmark": 0
     },
     {
-      "id": 40,
+      "id": "40",
       "title": "The Picture of Dorian Gray",
       "genre": "Philosophical Fiction",
       "author": "Oscar Wilde",
@@ -439,6 +439,17 @@
       "total_pages": 254,
       "cover_photo_url": "https://ia800505.us.archive.org/view_archive.php?archive=/35/items/l_covers_0014/l_covers_0014_31.zip&file=0014314700-L.jpg",
       "bookmark": 80
+    },
+    {
+      "id": "41",
+      "title": "Kigogo",
+      "genre": "Drama",
+      "author": "Pauline Kea",
+      "status": "to_be_read",
+      "isbn": "9789966066633",
+      "total_pages": 94,
+      "cover_photo_url": "",
+      "bookmark": 0
     }
   ]
 }

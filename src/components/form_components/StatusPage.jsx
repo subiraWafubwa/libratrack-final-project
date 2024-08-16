@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function StatusPage({ setAddNewBook }) {
-  const [totalPages, setTotalPages] = useState(0);
+export default function StatusPage({ total_pages, setAddNewBook, statusData }) {
+  const [localTotalPages, setLocalTotalPages] = useState(total_pages);
   const [selectedValue, setSelectedValue] = useState("to_be_read");
 
+  useEffect(() => {
+    setLocalTotalPages(total_pages);
+  }, [total_pages]);
+
   const handleSelectChange = (e) => {
-    setSelectedValue(e.target.value);
+    const value = e.target.value;
+    setSelectedValue(value);
+    setAddNewBook((prev) => ({
+      ...prev,
+      status: value,
+    }));
   };
 
   const backgroundColor =
@@ -19,14 +28,8 @@ function StatusPage({ setAddNewBook }) {
     <div id="status-page">
       <p>Status: </p>
       <select
-        value={selectedValue}
-        onChange={() => {
-          handleSelectChange;
-          setAddNewBook((prev) => ({
-            ...prev,
-            status: selectedValue,
-          }));
-        }}
+        value={statusData}
+        onChange={handleSelectChange}
         style={{ backgroundColor, color: "white" }}
       >
         <option
@@ -52,17 +55,16 @@ function StatusPage({ setAddNewBook }) {
       <input
         placeholder="Add total Pages"
         type="number"
-        value={totalPages}
+        value={localTotalPages}
         onChange={(e) => {
-          setTotalPages(e.target.value);
+          const pages = e.target.value;
+          setLocalTotalPages(pages);
           setAddNewBook((prev) => ({
             ...prev,
-            total_pages: e.target.value,
+            total_pages: pages,
           }));
         }}
       />
     </div>
   );
 }
-
-export default StatusPage;

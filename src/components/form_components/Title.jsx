@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Title({ setAddNewBook }) {
-  const [title, setTitle] = useState("");
+export default function Title({ title, setAddNewBook }) {
+  const [localTitle, setLocalTitle] = useState(title);
+
+  // Sync local state with the prop when the prop changes
+  useEffect(() => {
+    setLocalTitle(title);
+  }, [title]);
 
   return (
     <div id="title">
       <p>Title:</p>
       <input
         placeholder="Add Book Title"
-        value={title}
+        value={localTitle}
         onChange={(e) => {
-          setTitle(e.target.value);
+          const newTitle = e.target.value;
+          setLocalTitle(newTitle);
           setAddNewBook((prev) => ({
             ...prev,
-            title: e.target.value,
+            title: newTitle,
           }));
         }}
       />

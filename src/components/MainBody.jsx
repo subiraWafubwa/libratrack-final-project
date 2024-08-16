@@ -8,6 +8,7 @@ export default function MainBody({
   sortOption,
   handleSortChange,
   setAddBook,
+  setUpdateBook,
   addBook,
 }) {
   return (
@@ -19,6 +20,7 @@ export default function MainBody({
         sortOption={sortOption}
         handleSortChange={handleSortChange}
         setAddBook={setAddBook}
+        setUpdateBook={setUpdateBook}
         addBook={addBook}
       />
     </div>

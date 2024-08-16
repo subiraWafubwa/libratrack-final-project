@@ -56,7 +56,6 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: rgb(255, 249, 240);
   height: 70px;
   width: 100%;
@@ -75,18 +74,13 @@
   font-size: 30px;
 }
 
-.left-header {
-  display: flex;
-  align-items: center;
-}
-
 .header #search {
   left: 55px;
   position: relative;
   width: 25px;
 }
 
-.header input {
+#searchInput {
   border: 0.5px solid gray;
   width: 350px;
   font-size: 16px;
@@ -96,9 +90,10 @@
   padding: 0px 0px 0px 35px;
 }
 
-.header #connect-kindle,
+#open-chat,
 #start-live,
 #join-live {
+  transform: translate(400px, 0px);
   font-size: 16px;
   border: none;
   border-radius: 10px;
@@ -106,7 +101,7 @@
   height: 40px;
 }
 
-.header #connect-kindle {
+.header #open-chat {
   color: white;
   margin: 0px 60px;
   background-color: orangered;
@@ -305,7 +300,7 @@
 }
 
 .add-book-div {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 249, 240);
   border-radius: 10px;
   width: 700px;
   height: 600px;
@@ -414,4 +409,150 @@ select {
   padding: 10px 20px;
   font-weight: 600px;
   color: rgb(255, 255, 255);
+}
+
+/*Chat CSS*/
+.background {
+  border-radius: 10px;
+  width: 110%;
+  height: 110%;
+  background: rgb(255, 249, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+}
+
+#remove-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border: none;
+  border-radius: 50%;
+}
+
+#remove-chat img {
+  width: 20px;
+}
+
+.form-title {
+  font-size: 42px;
+  font-weight: 800;
+  font-family: "Pacifico";
+  color: black;
+  padding-bottom: 12px;
+}
+
+.form-subtitle {
+  font-size: 20px;
+  padding-bottom: 24px;
+}
+
+.auth-input {
+  border: 0.5px solid gray;
+  width: 310px;
+  font-size: 20px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 5px 18px;
+  margin-bottom: 10px;
+}
+
+.auth-button {
+  font-size: 20px;
+  width: 100%;
+  height: 60px;
+  color: white;
+  background-color: #fa541c;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.44s ease;
+  -webkit-transition: all 0.44s ease;
+  -moz-transition: all 0.44s ease;
+}
+
+.auth-button:hover {
+  filter: brightness(145%);
+}
+
+.chat-wrapper {
+  height: 90vh;
+  width: 90%;
+  background-color: rgb(255, 249, 240);
+}
+
+.chat-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  height: 75vh;
+  background-color: rgb(255, 249, 240);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.chat-box .header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chat-box .header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.chat-box .content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.chat-box .footer {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center buttons in footer */
+  margin-top: 10px;
+}
+
+.chat-box .footer button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fa541c; /* Example color */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-box .footer button:hover {
+  background-color: #e64a19; /* Darker shade on hover */
 }

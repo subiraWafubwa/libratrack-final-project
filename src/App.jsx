@@ -3,12 +3,15 @@ import "./index.css";
 import Header from "./components/Header";
 import MainBody from "./components/MainBody";
 import AddBook from "./components/AddBook";
+import UpdateBook from "./components/UpdateBook";
 
 function App() {
   const [addBook, setAddBook] = useState(false);
+  const [updateBook, setUpdateBook] = useState(false);
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState("title");
+  const [selectedBookId, setSelectedBookId] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:8001/books")
@@ -26,10 +29,7 @@ function App() {
   };
 
   const filterBooks = (books, searchTerm) => {
-    if (!searchTerm) {
-      return books;
-    }
-
+    if (!searchTerm) return books;
     return books.filter(
       (book) =>
         book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -41,25 +41,30 @@ function App() {
   };
 
   const sortedBooks = [...books].sort((a, b) => {
-    if (sortOption === "title") {
-      return a.title.localeCompare(b.title);
-    } else if (sortOption === "last_updated") {
-      return new Date(b.last_updated) - new Date(a.last_updated);
-    } else if (sortOption === "genre") {
-      return a.genre.localeCompare(b.genre);
-    } else if (sortOption === "author") {
-      return a.author.localeCompare(b.author);
-    } else if (sortOption === "status") {
-      return a.status.localeCompare(b.status);
-    }
+    if (sortOption === "title") return a.title.localeCompare(b.title);
+    if (sortOption === "genre") return a.genre.localeCompare(b.genre);
+    if (sortOption === "author") return a.author.localeCompare(b.author);
+    if (sortOption === "status") return a.status.localeCompare(b.status);
     return 0;
   });
 
   const filteredBooks = filterBooks(sortedBooks, search);
 
+  const getBookID = (id) => {
+    setSelectedBookId(id);
+    setUpdateBook(true);
+  };
+
   return (
     <div className="app">
-      {addBook ? <AddBook setAddBook={setAddBook} /> : null}
+      {addBook && <AddBook setAddBook={setAddBook} setBooks={setBooks} />}
+      {updateBook && (
+        <UpdateBook
+          setUpdateBook={setUpdateBook}
+          setBooks={setBooks}
+          bookId={selectedBookId}
+        />
+      )}
       <Header handleSearchChange={handleSearchChange} search={search} />
       <MainBody
         filteredBooks={filteredBooks}
@@ -67,7 +72,7 @@ function App() {
         sortOption={sortOption}
         handleSortChange={handleSortChange}
         setAddBook={setAddBook}
-        addBook={addBook}
+        setUpdateBook={getBookID}
       />
     </div>
   );
