@@ -9,12 +9,17 @@ import BookFormButton from "./form_components/BookFormButton";
 
 
 export default function AddBook({ setAddBook }) {
+  const handleAutoFill = (bookData) => {
+    setTitle(bookData.title);
+    setAuthor(bookData.author);
+    setTotalPages(bookData.totalPages);
+  };
   
   return (
     <div className="add-book-background" onClick={() => setAddBook(false)}>
       <div className="add-book-div" onClick={(e) => e.stopPropagation()}>
         <>
-        <ISBN/>
+        <ISBN onAutoFill={handleAutoFill}/>
           
           <Title />
           <Genre />
@@ -32,6 +37,7 @@ export default function AddBook({ setAddBook }) {
     </div>
   );
 }
+
 
 
 
