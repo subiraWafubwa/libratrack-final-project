@@ -1,21 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Genre({ setAddNewBook }) {
-  const [genre, setGenre] = useState("");
+export default function Genre({ genre: genreProp, setAddNewBook }) {
+  const [genre, setGenre] = useState(genreProp || "");
+
+  useEffect(() => {
+    setGenre(genreProp);
+  }, [genreProp]);
+
+  const handleGenreChange = (e) => {
+    const newGenre = e.target.value;
+    setGenre(newGenre);
+    setAddNewBook({
+      genre: newGenre,
+    });
+  };
 
   return (
     <div id="genre">
       <p>Genre:</p>
       <input
-        placeholder="Add Book Title"
+        placeholder="Add Book Genre"
         value={genre}
-        onChange={(e) => {
-          setGenre(e.target.value);
-          setAddNewBook((prev) => ({
-            ...prev,
-            genre: e.target.value,
-          }));
-        }}
+        onChange={handleGenreChange}
       />
     </div>
   );

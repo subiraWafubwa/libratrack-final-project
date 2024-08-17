@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import searchIcon from "../../assets/search.png";
+import chat from "../../assets/chat.png";
 import Mapp from "./Mapp";
 
 export default function Header({ handleSearchChange, search }) {
@@ -22,7 +23,7 @@ export default function Header({ handleSearchChange, search }) {
         onChange={handleSearchChange}
       />
       <button id="open-chat" onClick={toggleChatVisibility}>
-        Open Chat
+        <img src={chat} style={{ width: "30px" }} />
       </button>
 
       {isChatVisible && (

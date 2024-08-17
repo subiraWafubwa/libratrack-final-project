@@ -20,7 +20,7 @@
       "isbn": "9780451524935",
       "total_pages": 328,
       "cover_photo_url": "https://ia804703.us.archive.org/view_archive.php?archive=/9/items/l_covers_0012/l_covers_0012_91.zip&file=0012919048-L.jpg",
-      "bookmark": 0
+      "bookmark": "89"
     },
     {
       "id": "3",
@@ -106,8 +106,8 @@
       "author": "Fyodor Dostoevsky",
       "status": "already_read",
       "isbn": "9780374528379",
-      "total_pages": 796,
-      "cover_photo_url": "https://ia804703.us.archive.org/view_archive.php?archive=/9/items/l_covers_0012/l_covers_0012_91.zip&file=0012915267-L.jpg",
+      "total_pages": 828,
+      "cover_photo_url": "http://books.google.com/books/content?id=z1k_AxXUvmEC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "bookmark": 796
     },
     {
@@ -194,8 +194,8 @@
       "author": "Mary Shelley",
       "status": "already_read",
       "isbn": "9780141439471",
-      "total_pages": 280,
-      "cover_photo_url": "https://ia804703.us.archive.org/view_archive.php?archive=/9/items/l_covers_0012/l_covers_0012_75.zip&file=0012752093-L.jpg",
+      "total_pages": 356,
+      "cover_photo_url": "http://books.google.com/books/content?id=6W24a29p9GQC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "bookmark": 280
     },
     {
@@ -304,8 +304,8 @@
       "author": "Suzanne Collins",
       "status": "to_be_read",
       "isbn": "9780439023528",
-      "total_pages": 374,
-      "cover_photo_url": "https://ia600505.us.archive.org/view_archive.php?archive=/35/items/l_covers_0014/l_covers_0014_61.zip&file=0014618965-L.jpg",
+      "total_pages": 386,
+      "cover_photo_url": "http://books.google.com/books/content?id=hlb_sM1AN0gC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "bookmark": 0
     },
     {
@@ -376,13 +376,13 @@
     },
     {
       "id": "35",
-      "title": "The Catch-22",
+      "title": "Catch-22",
       "genre": "Satire",
       "author": "Joseph Heller",
       "status": "to_be_read",
       "isbn": "9780684833392",
-      "total_pages": 453,
-      "cover_photo_url": "https://ia600507.us.archive.org/view_archive.php?archive=/8/items/l_covers_0009/l_covers_0009_36.zip&file=0009367155-L.jpg",
+      "total_pages": 464,
+      "cover_photo_url": "http://books.google.com/books/content?id=_0YB05NPhJUC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "bookmark": 0
     },
     {
@@ -392,8 +392,8 @@
       "author": "Toni Morrison",
       "status": "currently_reading",
       "isbn": "9781400033416",
-      "total_pages": 324,
-      "cover_photo_url": "https://ia600505.us.archive.org/view_archive.php?archive=/35/items/l_covers_0014/l_covers_0014_34.zip&file=0014342655-L.jpg",
+      "total_pages": 356,
+      "cover_photo_url": "http://books.google.com/books/content?id=Ann5ugJilcMC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "bookmark": 160
     },
     {
@@ -403,8 +403,8 @@
       "author": "Ray Bradbury",
       "status": "already_read",
       "isbn": "9781451673319",
-      "total_pages": 249,
-      "cover_photo_url": "https://ia800505.us.archive.org/view_archive.php?archive=/35/items/l_covers_0014/l_covers_0014_41.zip&file=0014414407-L.jpg",
+      "total_pages": 272,
+      "cover_photo_url": "http://books.google.com/books/content?id=y3CyRurE7P4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "bookmark": 249
     },
     {
@@ -425,8 +425,8 @@
       "author": "Bram Stoker",
       "status": "to_be_read",
       "isbn": "9780141439846",
-      "total_pages": 418,
-      "cover_photo_url": "https://ia804703.us.archive.org/view_archive.php?archive=/9/items/l_covers_0012/l_covers_0012_62.zip&file=0012622155-L.jpg",
+      "total_pages": 520,
+      "cover_photo_url": "http://books.google.com/books/content?id=AEBmKZ_UdK4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
       "bookmark": 0
     },
     {
@@ -439,17 +439,6 @@
       "total_pages": 254,
       "cover_photo_url": "https://ia800505.us.archive.org/view_archive.php?archive=/35/items/l_covers_0014/l_covers_0014_31.zip&file=0014314700-L.jpg",
       "bookmark": 80
-    },
-    {
-      "id": "41",
-      "title": "Kigogo",
-      "genre": "Drama",
-      "author": "Pauline Kea",
-      "status": "to_be_read",
-      "isbn": "9789966066633",
-      "total_pages": 94,
-      "cover_photo_url": "",
-      "bookmark": 0
     }
   ]
 }

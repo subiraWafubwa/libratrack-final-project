@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function ImageURL({ setAddNewBook }) {
-  const [imageURL, setImageURL] = useState("");
+export default function ImageURL({ imageURL: imageURLProp, setAddNewBook }) {
+  const [imageURL, setImageURL] = useState(imageURLProp || "");
+
+  useEffect(() => {
+    setImageURL(imageURLProp);
+  }, [imageURLProp]);
+
+  const handleImageURLChange = (e) => {
+    const newImageURL = e.target.value;
+    setImageURL(newImageURL);
+    setAddNewBook({ cover_photo_url: newImageURL });
+  };
 
   return (
     <div id="image-url">
@@ -9,13 +19,7 @@ export default function ImageURL({ setAddNewBook }) {
       <input
         placeholder="Add Image URL"
         value={imageURL}
-        onChange={(e) => {
-          setImageURL(e.target.value),
-            setAddNewBook((prev) => ({
-              ...prev,
-              cover_photo_url: e.target.value,
-            }));
-        }}
+        onChange={handleImageURLChange}
       />
     </div>
   );

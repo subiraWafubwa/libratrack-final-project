@@ -21,13 +21,12 @@ export default function UpdateBook({ setUpdateBook, setBooks, bookId }) {
     bookmark: 0,
   });
 
-  // Fetch book data when the component mounts or when the bookId changes
+  // Fetch book data based on the bookId
   useEffect(() => {
     if (bookId) {
       fetch(`http://localhost:8001/books/${bookId}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setUpdateBookData(data);
         })
         .catch((error) => {
@@ -36,21 +35,13 @@ export default function UpdateBook({ setUpdateBook, setBooks, bookId }) {
     }
   }, [bookId]);
 
-  // Handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUpdateBookData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  // Update the book
   const handleSaveBook = () => {
     const { title, author, total_pages } = updateBookData;
 
-    if (title && author && total_pages !== 0) {
-      fetch(`http://localhost:8001/books/${updateBookData.id}`, {
+    // Validate the essential fields
+    if (title && author && total_pages > 0) {
+      // Fetch with PUT method to update the book data
+      fetch(`http://localhost:8001/books/${bookId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +55,6 @@ export default function UpdateBook({ setUpdateBook, setBooks, bookId }) {
           return response.json();
         })
         .then((data) => {
-          console.log("Book updated successfully:", data);
           setBooks((prev) =>
             prev.map((book) => (book.id === data.id ? data : book))
           );
@@ -78,7 +68,6 @@ export default function UpdateBook({ setUpdateBook, setBooks, bookId }) {
     }
   };
 
-  // Delete the book
   const handleDeleteBook = () => {
     fetch(`http://localhost:8001/books/${updateBookData.id}`, {
       method: "DELETE",
@@ -91,6 +80,7 @@ export default function UpdateBook({ setUpdateBook, setBooks, bookId }) {
       })
       .then(() => {
         console.log("Book deleted successfully");
+        // Remove the deleted book from the books state
         setBooks((prev) =>
           prev.filter((book) => book.id !== updateBookData.id)
         );
@@ -104,54 +94,54 @@ export default function UpdateBook({ setUpdateBook, setBooks, bookId }) {
   return (
     <div className="add-book-background" onClick={() => setUpdateBook(false)}>
       <div className="add-book-div" onClick={(e) => e.stopPropagation()}>
-        <>
-          <ISBN
-            isbn={updateBookData.isbn}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-          <Title
-            title={updateBookData.title}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-          <Genre
-            genre={updateBookData.genre}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-          <Author
-            author={updateBookData.author}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-          <StatusPage
-            total_pages={updateBookData.total_pages}
-            statusData={updateBookData.status}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-          <ImageURL
-            cover_photo_url={updateBookData.cover_photo_url}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-          <BookmarkedPage
-            bookmarkData={updateBookData.bookmark}
-            setAddNewBook={(data) =>
-              setUpdateBookData((prev) => ({ ...prev, ...data }))
-            }
-          />
-        </>
+        {/* Form Components */}
+        <ISBN
+          isbn={updateBookData.isbn}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        <Title
+          title={updateBookData.title}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        <Genre
+          genre={updateBookData.genre}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        <Author
+          author={updateBookData.author}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        <StatusPage
+          total_pages={updateBookData.total_pages}
+          statusData={updateBookData.status}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        <ImageURL
+          imageURL={updateBookData.cover_photo_url}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        <BookmarkedPage
+          bookmark={updateBookData.bookmark}
+          setAddNewBook={(data) =>
+            setUpdateBookData((prev) => ({ ...prev, ...data }))
+          }
+        />
+        {/* Action Buttons */}
         <div className="add-book-buttons">
           <BookFormButton
-            value="SAVE"
+            value="UPDATE"
             backgroundColor="rgb(7, 59, 0)"
             onClick={handleSaveBook}
           />

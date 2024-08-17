@@ -1,7 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function BookmarkedPage({ bookmark, setAddNewBook }) {
-  const [localBookmark, setLocalBookmark] = useState(0);
+export default function BookmarkedPage({
+  bookmark: bookmarkProp,
+  setAddNewBook,
+}) {
+  const [localBookmark, setLocalBookmark] = useState(bookmarkProp || 0);
+
+  useEffect(() => {
+    setLocalBookmark(bookmarkProp);
+  }, [bookmarkProp]);
+
+  const handleBookmarkChange = (e) => {
+    const newBookmark = e.target.value;
+    setLocalBookmark(newBookmark);
+    setAddNewBook({ bookmark: newBookmark });
+  };
 
   return (
     <div id="bookmarked-page">
@@ -10,13 +23,7 @@ export default function BookmarkedPage({ bookmark, setAddNewBook }) {
         placeholder="Add page bookmark"
         type="number"
         value={localBookmark}
-        onChange={(e) => {
-          setLocalBookmark(e.target.value);
-          setAddNewBook((prev) => ({
-            ...prev,
-            bookmark: e.target.value,
-          }));
-        }}
+        onChange={handleBookmarkChange}
       />
     </div>
   );

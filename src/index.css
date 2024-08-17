@@ -93,12 +93,12 @@
 #open-chat,
 #start-live,
 #join-live {
-  transform: translate(400px, 0px);
+  transform: translate(830px, 0px);
   font-size: 16px;
   border: none;
   border-radius: 10px;
   padding: 0px 15px;
-  height: 40px;
+  height: 55px;
 }
 
 .header #open-chat {

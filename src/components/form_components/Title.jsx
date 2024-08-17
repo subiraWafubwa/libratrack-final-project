@@ -17,10 +17,7 @@ export default function Title({ title, setAddNewBook }) {
         onChange={(e) => {
           const newTitle = e.target.value;
           setLocalTitle(newTitle);
-          setAddNewBook((prev) => ({
-            ...prev,
-            title: newTitle,
-          }));
+          setAddNewBook({ title: newTitle });
         }}
       />
     </div>

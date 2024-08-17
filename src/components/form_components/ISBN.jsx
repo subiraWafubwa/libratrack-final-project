@@ -1,9 +1,13 @@
 import search from "../../../assets/white_search.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ISBN({ isbn, setAddNewBook }) {
   const [localIsbn, setLocalIsbn] = useState(isbn);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setLocalIsbn(isbn);
+  }, [isbn]);
 
   const handleFetchBook = () => {
     const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${localIsbn}`;
@@ -38,10 +42,9 @@ export default function ISBN({ isbn, setAddNewBook }) {
         value={localIsbn}
         onChange={(e) => {
           setLocalIsbn(e.target.value);
-          setAddNewBook((prev) => ({
-            ...prev,
+          setAddNewBook({
             isbn: e.target.value,
-          }));
+          });
         }}
       />
       <button onClick={handleFetchBook}>

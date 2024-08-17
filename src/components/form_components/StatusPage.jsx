@@ -2,19 +2,24 @@ import React, { useEffect, useState } from "react";
 
 export default function StatusPage({ total_pages, setAddNewBook, statusData }) {
   const [localTotalPages, setLocalTotalPages] = useState(total_pages);
-  const [selectedValue, setSelectedValue] = useState("to_be_read");
+  const [selectedValue, setSelectedValue] = useState(
+    statusData || "to_be_read"
+  );
 
   useEffect(() => {
     setLocalTotalPages(total_pages);
   }, [total_pages]);
 
+  useEffect(() => {
+    setSelectedValue(statusData);
+  }, [statusData]);
+
   const handleSelectChange = (e) => {
     const value = e.target.value;
     setSelectedValue(value);
-    setAddNewBook((prev) => ({
-      ...prev,
+    setAddNewBook({
       status: value,
-    }));
+    });
   };
 
   const backgroundColor =
@@ -28,7 +33,7 @@ export default function StatusPage({ total_pages, setAddNewBook, statusData }) {
     <div id="status-page">
       <p>Status: </p>
       <select
-        value={statusData}
+        value={selectedValue}
         onChange={handleSelectChange}
         style={{ backgroundColor, color: "white" }}
       >
@@ -59,10 +64,9 @@ export default function StatusPage({ total_pages, setAddNewBook, statusData }) {
         onChange={(e) => {
           const pages = e.target.value;
           setLocalTotalPages(pages);
-          setAddNewBook((prev) => ({
-            ...prev,
+          setAddNewBook({
             total_pages: pages,
-          }));
+          });
         }}
       />
     </div>

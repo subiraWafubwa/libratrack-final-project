@@ -16,10 +16,9 @@ export default function Author({ author, setAddNewBook }) {
         onChange={(e) => {
           const newAuthor = e.target.value;
           setLocalAuthor(newAuthor);
-          setAddNewBook((prev) => ({
-            ...prev,
+          setAddNewBook({
             author: newAuthor,
-          }));
+          });
         }}
       />
     </div>
