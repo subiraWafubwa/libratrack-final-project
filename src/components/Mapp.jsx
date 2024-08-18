@@ -8,14 +8,16 @@ export default function Mapp({ toggleChatVisibility }) {
 
   if (!user) {
     return (
-      <AuthPage
-        onAuth={(user) => setUser(user)}
-        toggleChatVisibility={toggleChatVisibility}
-      />
+      // <AuthPage
+      //   onAuth={(user) => setUser(user)}
+      //   toggleChatVisibility={toggleChatVisibility}
+      // />
+      <></>
     );
   } else {
     return (
-      <ChatsPage user={user} toggleChatVisibility={toggleChatVisibility} />
+      // <ChatsPage user={user} toggleChatVisibility={toggleChatVisibility} />
+      <></>
     );
   }
 }
