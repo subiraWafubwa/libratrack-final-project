@@ -28,25 +28,34 @@ LibraTrack is a React application designed to manage and track a book collection
    git clone https://github.com/your-username/libra-track.git
    ```
 
-2. Navigate to the project directory:
-
-   ```bash
-   cd libra-track
-   ```
-
-3. Install dependencies:
+2. Install dependencies:
 
    ```bash
    npm install
    ```
-
-4. Start the development server:
+   
+3. Start the vite application:
 
    ```bash
-   npm start
+   npm run dev
+   ```
+   The front-end should be available at [http:127.0.0.1:5173](http://127.0.0.1:5173).
+
+3. Start the json-server server:
+
+   ```bash
+   npm run server
    ```
 
-   The application will be available at [http://localhost:3000](http://localhost:3000).
+   The application will be available at [http://localhost:8001](http://localhost:8001).
+
+4. Start the chat system server: Move to backend folder then run `npm start`:
+
+   ```bash
+   cd backend/ && npm start
+   ```
+
+   Your console should print the text: *(3001) : Chat server is running*
 
 ## API Endpoints
 
